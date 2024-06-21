@@ -1,0 +1,16 @@
+ANGULAR: Herramienta para hacer webs de forma ordenada y agil
+COMPONENTE: ETIQUETA "personalizada" / sección de un página o una página. Encapsula un HTML/CSS/JS (TS)
+MÓDULO: Agrupación de componentes, directivas, servicios...Englobamos una función o estructura. RoutingModule
+SPA: Single Page App
+CLIENTE DE ANGULAR: ng LANZAR LA app/ añadir nuevos elementos a la app/ test / compilación 
+        ng serve - arrancar
+        ng g c - generar un nuevo componente
+spect.ts: Testing
+.ts: Clases Compoentes, Modulos, Directivas, Pipes, Propias
+Decoraddor: Anotación o Directva que identifica para Angular el Rol de esa Clases
+IOC. Inversion de control: Yo no hago el new, lo hace Angular
+Ciclo de VIda. constructor, ngoninit...ngondestroy
+
+TYPESCRITP:
+
+    non-null Operator (!)
