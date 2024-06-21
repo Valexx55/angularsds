@@ -1,0 +1,1 @@
+export const RUTA_SERVIDOR_PERRO_ALEATORIO = "https://dog.ceo/api/breeds/image/random";

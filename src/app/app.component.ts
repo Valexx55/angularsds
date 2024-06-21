@@ -17,7 +17,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor()
   {
-    this.title="el curso";
+    this.title="SDS Angular";
     console.log("En el constructor de AppComponent");//1
   }
   ngOnDestroy(): void {
