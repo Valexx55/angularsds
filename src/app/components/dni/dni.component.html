@@ -34,3 +34,14 @@
 </div>
 
 <button (click)="calcularLetraDni()" class="btn btn-primary">Calcular Letra</button>
+
+<!-- <div *ngIf="letra!=''">
+    Su letra de dni es {{letra}}
+</div>-->
+
+@if (letra!='')
+{
+    <div>
+        Su letra de dni es {{letra}}
+    </div>
+}

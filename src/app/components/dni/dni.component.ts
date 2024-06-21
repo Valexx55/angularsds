@@ -1,3 +1,5 @@
+//import { CommonModule } from '@angular/common';
+//import { NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -9,11 +11,11 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './dni.component.css'
 })
 export class DniComponent implements OnInit, OnDestroy {
- 
-  titulo:string;
-  numero!:number|null;//UNION TYPE
-  letra!:string;
-  prefijo!:string;
+
+  titulo: string;
+  numero!: number | null;//UNION TYPE
+  letra!: string;
+  prefijo!: string;
 
 
   //atributo a nivel de Clase
@@ -24,24 +26,23 @@ export class DniComponent implements OnInit, OnDestroy {
    * 
    * https://www.interior.gob.es/opencms/es/servicios-al-ciudadano/tramites-y-gestiones/dni/calculo-del-digito-de-control-del-nif-nie/
    */
- 
-  constructor()
-  {
-       
-    this.titulo= 'CALCULE LA LETRA DE SU DNI' 
+
+  constructor() {
+
+    this.titulo = 'CALCULE LA LETRA DE SU DNI'
     console.log("constructor dni");
+    this.letra = "";
     //this.numero=8;
   }
 
   ngOnInit(): void {
-   console.log("En ngInit Dni");
+    console.log("En ngInit Dni");
   }
   ngOnDestroy(): void {
     console.log("En ngOnDestroy Dni");
   }
 
-  cambioLetraRadio (evento: Event):void
-  {
+  cambioLetraRadio(evento: Event): void {
     //let inputRadioTocado: HTMLInputElement = <HTMLInputElement>evento.target; //con esto, sé a qué elemento le han hecho click
     let inputRadioTocado: HTMLInputElement = evento.target as HTMLInputElement; //con esto, sé a qué elemento le han hecho click
     //inputRadioTocado.
@@ -53,25 +54,25 @@ export class DniComponent implements OnInit, OnDestroy {
 
   calcularLetraDni() {
     //console.log("en calcularLetraDni() con el numero " + this.numero);
-    let numeroDni = this.numero?.valueOf();
+    //? optional Optional Chaining --> continua invoca a la propiedad o al método si es != null o unidifend
+    // ?? Nullish Coalescing - el valor por defecto en caso de null "ELVIS Operator"
+    let numeroDni = this.numero?.valueOf() ?? 0;
     console.log("en calcularLetraDni() con el numero " + numeroDni);
-    if (this.prefijo=='y')
-      {
-        //le tenemos que aañdir un uno por delante
-          numeroDni = parseInt("1"+numeroDni);//de string a número
-      } else if (this.prefijo=='z')
-        {
-          //le tenemos que aañdir un uno por delante
-          numeroDni = parseInt("2"+numeroDni);//de string a número
-        }
-        
-        if (numeroDni)
-          {
-            let resto = numeroDni%(DniComponent.SECUENCIA_LETRAS.length);
-            this.letra = DniComponent.SECUENCIA_LETRAS.charAt(resto);
-            console.log("SU LETRA ES " + this.letra);
-          }
-     
+    if (this.prefijo == 'y') {
+      //le tenemos que aañdir un uno por delante
+      numeroDni = parseInt("1" + numeroDni);//de string a número
+    } else if (this.prefijo == 'z') {
+      //le tenemos que aañdir un uno por delante
+      numeroDni = parseInt("2" + numeroDni);//de string a número
+    }
+
+
+    //let resto = ((numeroDni)? numeroDni:0 % (DniComponent.SECUENCIA_LETRAS.length))?.valueOf();
+    let resto = numeroDni % (DniComponent.SECUENCIA_LETRAS.length);
+    this.letra = DniComponent.SECUENCIA_LETRAS.charAt(resto);
+    console.log("SU LETRA ES " + this.letra);
+
+
   }
 
 }
