@@ -93,4 +93,56 @@ export class PerroComponent {
     })
   }
 
+  ordenarPorId ()
+  {
+    console.log(" click ordenarPorId");
+    /*this.listaPerros.sort(
+    (perro1:Perroweb, perro2:Perroweb) => {
+      let numDev:number = 0;
+
+        if (perro1.id < perro2.id)
+          {
+            numDev = 100;
+          } else if (perro2.id < perro1.id)
+            {
+              numDev = -100;
+            } 
+            else {
+              numDev = 0;
+            }
+
+      return numDev;
+    }
+    )*/
+
+    this.listaPerros.sort(
+      (p1, p2) => p1.id-p2.id   
+      );
+
+
+
+  }
+
+  ordenarPorRaza()
+  {
+    console.log(" click ordenarPorRaza");
+
+    this.listaPerros.sort ((p1, p2) => 
+      {
+        let numDev = 0;
+
+        if (p1.raza>p2.raza )
+          {
+            numDev = 1;
+          } else if (p1.raza<p2.raza )
+            {
+              numDev = -1;
+            }
+        return numDev;
+      }
+     
+    );
+
+  }
+
 }

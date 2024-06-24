@@ -16,14 +16,14 @@
     <table class="table">
         <thead>
           <tr>
-            <th scope="col">ID </th>
-            <th scope="col">RAZA</th>
+            <th scope="col" (click)="ordenarPorId()">ID </th>
+            <th scope="col" (click)="ordenarPorRaza()">RAZA</th>
             <th scope="col">FOTO</th>
           </tr>
         </thead>
         <tbody>
            
-            @for (perro of listaPerros)
+            @for (perro of listaPerros; track perro.id)
             {
                 <tr>
                     <th scope="row">{{perro.id}}</th>
