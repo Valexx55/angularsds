@@ -3,6 +3,11 @@ td img {
     height: 5em;
 }
 
+figure img {
+    width: 30em;
+    height: 30em;
+}
+
 th {
     cursor: pointer;
 }

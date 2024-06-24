@@ -3,11 +3,12 @@ import { PerroService } from '../../services/perro.service';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Perroweb } from '../../models/perroweb';
 import { Observer } from 'rxjs';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-perro',
   standalone: true,
-  imports: [],
+  imports: [MatProgressBarModule],
   templateUrl: './perro.component.html',
   styleUrl: './perro.component.css'
 })
@@ -22,9 +23,11 @@ export class PerroComponent {
   observerPerrosApi: Observer<Perroweb>;
   observerPerrosApiConCabecera: Observer<HttpResponse<Perroweb>>;
 
+  enDescarga:boolean;
+
   constructor(private perroService: PerroService) {
     //this.raza = '';
-
+    this.enDescarga= false;
     console.log("Perro creado");
     this.listaPerros=[];//inicializo el array de perros
     this.rutaFotoPerro="assets/perromuestra.jpg";
@@ -49,6 +52,7 @@ export class PerroComponent {
         this.listaPerros.push(perroNuevo);
         console.log(`Hemos recibido ${this.listaPerros.length} perros`);
         this.mostrarListaPerros();
+        this.enDescarga=false;
 
 
       },
@@ -74,7 +78,13 @@ export class PerroComponent {
 
   traerPerroAleatorio() {
     console.log(" traerPerroAleatorio()");
-    this.perroService.cargarPerroAleatorioDelServidor().subscribe(this.observerPerrosApi);
+    this.enDescarga=true;
+
+    setTimeout(()=> 
+      this.perroService.cargarPerroAleatorioDelServidor().subscribe(this.observerPerrosApi), 
+    1000)
+
+    
     //this.perroService.cargarPerroAleatorioDelServidorConCabeceras().subscribe(this.observerPerrosApiConCabecera);
   }
 
