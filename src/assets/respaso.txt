@@ -1,4 +1,5 @@
 ANGULAR: Herramienta para hacer webs de forma ordenada y agil
+Carpeta assets: para guardar archivos ejecutables / config / fotos / documentos
 COMPONENTE: ETIQUETA "personalizada" / sección de un página o una página. Encapsula un HTML/CSS/JS (TS)
 MÓDULO: Agrupación de componentes, directivas, servicios...Englobamos una función o estructura. RoutingModule
 SPA: Single Page App
@@ -10,7 +11,15 @@ spect.ts: Testing
 Decoraddor: Anotación o Directva que identifica para Angular el Rol de esa Clases
 IOC. Inversion de control: Yo no hago el new, lo hace Angular
 Ciclo de VIda. constructor, ngoninit...ngondestroy
+SERVICIO: Una clase que actúa proveedor de un Compoente (contiene la funcionalidad HTTP)
+RXJS:Librería para gestionar procesos asíncronas
+
+        Observable: tipo devuelto cuando un dato se hace esperar
+        Observer: El ojbeto que está suscrito o esperando la respuesta de un Observable
+        
+HTTP: CABECERA / CUERPO
 
 TYPESCRITP:
 
     non-null Operator (!)
+

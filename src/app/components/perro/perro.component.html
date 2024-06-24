@@ -1,7 +1,39 @@
 <p>{{titulo}}</p>
 
-<img src="{{rutaFotoPerro}}" class="rounded d-block" alt="...">
+<!--<img src="{{rutaFotoPerro}}" class="rounded d-block" alt="...">-->
+<figure class="figure">
+    <img src="{{rutaFotoPerro}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+    <figcaption class="figure-caption">{{raza ? raza : "desconocido"}}</figcaption>
+  </figure>
+
+
 <!--TODO: mostrar la raza -->
 <br>
 <button class="btn btn-primary mx-auto " (click)="traerPerroAleatorio()">TRAER FOTO</button>
+@if (listaPerros && listaPerros.length>0)
+{
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID </th>
+            <th scope="col">RAZA</th>
+            <th scope="col">FOTO</th>
+          </tr>
+        </thead>
+        <tbody>
+           
+            @for (perro of listaPerros)
+            {
+                <tr>
+                    <th scope="row">{{perro.id}}</th>
+                    <td>{{perro.raza}}</td>
+                    <td><img src="{{perro.message}}" class="img-thumbnail"></td>
+                  </tr>
+            }
+          
+          
+        </tbody>
+      </table>
+}
 

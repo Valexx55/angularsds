@@ -7,13 +7,17 @@ export class Perroweb {
     "status": "success"
 }
      */
+    id:number;
     message:string;
     status:string;
+    raza:string;
     
     constructor ()
     {
+        this.id= 0;
         this.message="";
         this.status="";
+        this.raza="";
 
     }
 }
