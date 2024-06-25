@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Alumno } from '../../models/alumno';
 
 @Component({
   selector: 'app-formulario-alumno',
@@ -10,6 +11,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormularioAlumnoComponent {
 
+  alumno:Alumno;
+
+
+
+  constructor() {
+    this.alumno = new Alumno();
+  }
 
   estiloBoton():string
   {
@@ -23,6 +31,7 @@ export class FormularioAlumnoComponent {
 
   crearAlumno()
   {
-    console.log("en crearAlumno");
+    console.log("en crearAlumno ");
+    //TODO: insertar- hacer un POST al servidor Conexxión componente-servicio
   }
 }
