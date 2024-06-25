@@ -1,0 +1,17 @@
+<table class="table text-center mt-3">
+    <thead>
+        <tr>
+            <th>{{(!nombreJugadorMarcador) ? 'JUGADOR' : nombreJugadorMarcador}} </th>
+            <th> PC </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>{{marcadorActual.puntuacion_jugador}}</td>
+            <td>{{marcadorActual.puntuacion_maquina}}</td>
+            
+        </tr>
+    </tbody>
+    <button (click)="borrarMarcador()" class="btn btn-primary">BORRAR</button>
+</table>

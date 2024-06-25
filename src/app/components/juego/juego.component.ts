@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MarcadorComponent } from '../marcador/marcador.component';
 
 @Component({
   selector: 'app-juego',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, MarcadorComponent],
   templateUrl: './juego.component.html',
   styleUrl: './juego.component.css'
 })
@@ -20,6 +21,7 @@ export class JuegoComponent implements AfterViewInit {
   //ElementRef es el tipo de Angular para envolver o referenciar a un elemento "nativo"
   @ViewChild('imgpc') imagenPc!: ElementRef<HTMLImageElement>;
   @ViewChildren('piedra, papel, tijera') botones!:QueryList<ElementRef<HTMLImageElement>>;
+  @ViewChild(MarcadorComponent) marcadorHijo!: MarcadorComponent;
 
   ids_botones: Array<string> = ["piedra", "papel", "tijera"];
   img_botones: Array<string> = ["rock", "paper", "scissors"];
@@ -88,22 +90,10 @@ export class JuegoComponent implements AfterViewInit {
 
     let resultado = this.tabla_decision[this.jugadaUsuario][this.jugadaPc]
 
-    let mensaje:string = '';
+   // let mensaje:string = '';
 
-    switch (resultado)
-    {
-      case -1: 
-        mensaje = "Ha ganado la máquina";
-      break;
-      case 0: 
-        mensaje = "EMAPTE";
-      break;
-      case 1: 
-        mensaje = "Ha ganado el jugador";
-      break;
-
-    }
-    alert(mensaje);
+    //alert(mensaje);
+    this.marcadorHijo.actualizarMarcador(resultado);
 
   }
 
