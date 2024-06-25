@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Marcador } from '../../models/marcador';
 
 @Component({
@@ -12,11 +12,13 @@ export class MarcadorComponent {
 
 
   @Input() nombreJugadorMarcador!:string;
+  @Output() emisorMarcador: EventEmitter<Marcador>; //enviamos una señal al padre
   marcadorActual:Marcador;
 
   constructor ()
   {
     this.marcadorActual = new Marcador();
+    this.emisorMarcador = new EventEmitter<Marcador>();
   }
 
   actualizarMarcador (resultado:number)
@@ -38,6 +40,7 @@ export class MarcadorComponent {
       break;
 
     }
+    this.emisorMarcador.emit(this.marcadorActual);
 
   }
 

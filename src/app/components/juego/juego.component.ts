@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MarcadorComponent } from '../marcador/marcador.component';
+import { Marcador } from '../../models/marcador';
 
 @Component({
   selector: 'app-juego',
@@ -93,7 +94,8 @@ export class JuegoComponent implements AfterViewInit {
    // let mensaje:string = '';
 
     //alert(mensaje);
-    this.marcadorHijo.actualizarMarcador(resultado);
+    setTimeout (()=>this.marcadorHijo.actualizarMarcador(resultado), 500);
+    
 
   }
 
@@ -114,6 +116,22 @@ export class JuegoComponent implements AfterViewInit {
 
   }
 
+  //informar quién va ganando 
+  informarMarcador (marcador_hijo: Marcador)
+  {
+    let mensaje:string = '';
+    if (marcador_hijo.puntuacion_jugador>marcador_hijo.puntuacion_maquina)
+      {
+        mensaje = `${this.nombreJugador} vas Ganando !!`;
+      } else if (marcador_hijo.puntuacion_maquina>marcador_hijo.puntuacion_jugador)
+        {
+          mensaje = `${this.nombreJugador} vas Palmando !!`;
+        } else {
+          //empate
+          mensaje = "EMPATE... intríngulis!";
+        }
+      alert(mensaje);
+  }
 
 
 }
