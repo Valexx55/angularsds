@@ -23,3 +23,7 @@ TYPESCRITP:
 
     non-null Operator (!)
 
+ANGULAR Material: Librería de compenentes de la "Casa Angular"
+
+standalone: Cada componente debe declarar explícitamente sus depedencias
+Property bindign: [ ] asigno un valor a una propeidad del Compoente desde la plantilla
