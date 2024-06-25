@@ -1,0 +1,63 @@
+{
+    "posts": [
+      { "id": "1", "title": "a title", "views": 100 },
+      { "id": "2", "title": "another title", "views": 200 }
+    ],
+    "comments": [
+      { "id": "1", "text": "a comment about post 1", "postId": "1" },
+      { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    ],
+    "profile": {
+      "name": "typicode"
+    },
+    "alumnos": [
+      {
+          "id": 1,
+          "nombre": "Juan",
+          "apellido": "Pedro",
+          "email": "juanp@correo.es",
+          "edad": 14,
+          "creadoEn": "2022-02-10T19:41:07.020+00:00",
+          "fotoHashCode": null
+        
+      },
+      {
+          "id": 2,
+          "nombre": "Alex",
+          "apellido": "Pedro",
+          "email": "juanp@correo.es",
+          "edad": 14,
+          "creadoEn": "2022-02-10T19:41:51.971+00:00",
+          "fotoHashCode": null
+    
+      },
+      {
+          "id": 3,
+          "nombre": "Paco",
+          "apellido": "Pedro",
+          "email": "juanp@correo.es",
+          "edad": 14,
+          "creadoEn": "2022-02-10T19:41:59.670+00:00",
+          "fotoHashCode": null
+      },
+      {
+          "id": 4,
+          "nombre": "Pepa",
+          "apellido": "Pedro",
+          "email": "juanp@correo.es",
+          "edad": 14,
+          "creadoEn": "2022-02-10T19:42:04.466+00:00",
+          "fotoHashCode": null
+      },
+      {
+          "id": 5,
+          "nombre": "Luis",
+          "apellido": "Rodri",
+          "email": "juanp@correo.es",
+          "edad": 14,
+          "creadoEn": "2022-02-10T19:42:15.636+00:00",
+          "fotoHashCode": null
+      }
+
+    ]
+  }
