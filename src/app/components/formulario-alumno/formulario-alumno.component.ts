@@ -15,6 +15,8 @@ export class FormularioAlumnoComponent {
 
   alumno:Alumno;
 
+  nalumnos!:number;
+
 
   router:Router = inject(Router);//este objeto me permite enrutar programaticamente
 
@@ -35,23 +37,27 @@ export class FormularioAlumnoComponent {
   crearAlumno()
   {
     console.log("en crearAlumno ");
-    this.alumno.id = null;
-    //TODO: generar el ID correctamente
-    this.alumnoService.crearAlumnoEnElServidor(this.alumno).subscribe(
-      {
-        next: (alumnoNuevo:Alumno) => {
-          console.log("Alumno insertado correctamente en el servidor");
-          //una vez que se cree el alumno, nos dirigimos al listao /alumnos
-          this.router.navigateByUrl("/alumnos");
-        } , 
-        error: (error) => {
-          console.log("Error " + error);
-        },
-        complete: () => {
-          console.log("Comunicación completada");
-        }
-
+    this.alumnoService.leerTodosLosAlumnosDelServidor().subscribe({
+      next: (lista) => {
+        this.nalumnos = lista.length;
+        this.alumno.id = this.nalumnos+1;
+        this.alumnoService.crearAlumnoEnElServidor(this.alumno).subscribe(
+          {
+            next: (alumnoNuevo:Alumno) => {
+              console.log("Alumno insertado correctamente en el servidor");
+              //una vez que se cree el alumno, nos dirigimos al listao /alumnos
+              this.router.navigateByUrl("/alumnos");
+            } , 
+            error: (error) => {
+              console.log("Error " + error);
+            },
+            complete: () => {
+              console.log("Comunicación completada");
+            }
+    
+          }
+        )
       }
-    );
+    })  
   }
 }

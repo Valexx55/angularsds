@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Alumno } from '../../models/alumno';
 import { AlumnoService } from '../../services/alumno.service';
+import { DatePipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-alumnos',
   standalone: true,
-  imports: [],
+  imports: [DatePipe, UpperCasePipe],
   templateUrl: './alumnos.component.html',
   styleUrl: './alumnos.component.css'
 })
@@ -19,12 +20,24 @@ export class AlumnosComponent implements OnInit {
   constructor (private alumnoService:AlumnoService)
   {
     this.listaAlumnos = [];
+
+    
     
   }
   
   ngOnInit(): void {
     //HTTP
-    this.alumnoService.leerTodosLosAlumnosDelServidor()
+    this.alumnoService.leerTodosLosAlumnosDelServidor().subscribe({
+      next: (alumnos:Array<Alumno>) => {
+        this.listaAlumnos = alumnos; 
+      },
+      error:(error) => {
+        console.log(error)
+      },
+      complete: () =>{
+        console.log("Ok")
+      }
+    })
   }
 
 

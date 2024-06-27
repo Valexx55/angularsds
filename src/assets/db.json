@@ -73,36 +73,20 @@
       "fotoHashCode": null
     },
     {
-      "id": "0",
-      "nombre": "maria",
-      "apellido": "jimenez",
-      "email": "maria@indra.es",
+      "id": 6,
+      "nombre": "jose",
+      "apellido": "antonio",
+      "email": "ja@asf",
       "creadoEn": "",
-      "edad": 23
+      "edad": 30
     },
     {
-      "id": null,
-      "nombre": "pepe",
-      "apellido": "lomas",
-      "email": "pepe@pp.es",
+      "id": 7,
+      "nombre": "PEPA",
+      "apellido": "perez",
+      "email": "pepa@hot.es",
       "creadoEn": "",
-      "edad": 50
-    },
-    {
-      "id": null,
-      "nombre": "asfb",
-      "apellido": "asdfbsadf",
-      "email": "asfbs@bb.es",
-      "creadoEn": "",
-      "edad": 100
-    },
-    {
-      "id": null,
-      "nombre": "JUANA",
-      "apellido": "LOPEZ",
-      "email": "jlopez@te.es",
-      "creadoEn": "",
-      "edad": 25
+      "edad": 30
     }
   ]
 }

@@ -1,1 +1,67 @@
-<p>alumnos works!</p>
+<div class="listaAlumnos">
+
+    <!--<fa-icon [icon]="iconoCafe"></fa-icon>-->
+
+    <!-- for para pintar la lista de alumnos recibida-->
+@for (alumno of listaAlumnos; track alumno.id)
+{
+
+    <div class="card">
+
+
+        <!--si el id del alumno es par, que salga la foto de un hombre
+        y si es impar, que salga la de una mujer -->
+        @if ((alumno.id)&&(alumno.id%2==0))
+        {
+            <img class="card-img-top" alt="Logo persona" src="https://randomuser.me/api/portraits/men/{{alumno.id}}.jpg" >
+        } @else {
+            <img class="card-img-top" alt="Logo persona" src="https://randomuser.me/api/portraits/women/{{alumno.id}}.jpg" >
+        }
+        
+        
+        
+
+        <div class="card-body">
+            <h5 class="card-title"> {{alumno.id}}  {{alumno.nombre | uppercase}} {{alumno.apellido  | uppercase}} </h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Email {{alumno.email}}</li>
+                <li class="list-group-item">Edad {{alumno.edad}}</li>
+            </ul>
+        </div>
+        <div class="card-footer text-muted">
+            <p>{{alumno.creadoEn | date :'short'}} </p>
+        </div>
+        <button class="btn btn-success" ></button>
+        <button class="btn btn-danger" ></button>
+    </div>
+
+}
+
+</div>
+
+
+
+
+
+<!--
+    solución de Germán, de Lujo!
+    <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Apellidos</td>
+            <td>Email</td>
+            <td>Edad</td>
+        </tr>
+        @for(alumno of listaAlumnos; track alumno.id){
+            <tr>
+                <td>{{alumno.id}}</td>
+                <td>{{alumno.nombre}}</td>
+                <td>{{alumno.apellido}}</td>
+                <td>{{alumno.email}}</td>
+                <td>{{alumno.edad}}</td>
+            </tr>
+        }
+    </table>
+</div>-->

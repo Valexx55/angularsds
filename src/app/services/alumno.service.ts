@@ -26,11 +26,12 @@ export class AlumnoService {
    }
 
 
-  leerTodosLosAlumnosDelServidor ()
+  leerTodosLosAlumnosDelServidor ():Observable<Array<Alumno>>
   {
-
+    return this.httpClient.get<Array<Alumno>>(this.ruta_servidor);
   }
 
+  
   leerUnAlumnosDelServidor (numeroAlumno:number)
   {
     
