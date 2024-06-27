@@ -47,8 +47,8 @@ export class AlumnoService {
 
   }
 
-  borrarAlumnoDelServidor (numeroAlumno:number)
+  borrarAlumnoDelServidor (idAlumno:number):Observable<Alumno>
   {
-
+    return this.httpClient.delete<Alumno>(this.ruta_servidor+"/"+idAlumno);
   }
 }

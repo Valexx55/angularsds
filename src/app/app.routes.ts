@@ -12,5 +12,6 @@ export const routes: Routes = [
     {path:'perro', component:PerroComponent}, //perros
     {path:'juego', component:JuegoComponent}, //juego
     {path:'alumno/form', component:FormularioAlumnoComponent}, // para crear o modificar alumno
+    {path:'alumno/form/edit/:idAlumno', component:FormularioAlumnoComponent}, // para crear o modificar alumno
     {path:'alumnos', component:AlumnosComponent}, // para el listado de alumnos
 ];

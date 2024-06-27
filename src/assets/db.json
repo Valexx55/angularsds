@@ -28,24 +28,6 @@
   },
   "alumnos": [
     {
-      "id": "2",
-      "nombre": "Alex",
-      "apellido": "Pedro",
-      "email": "juanp@correo.es",
-      "edad": 14,
-      "creadoEn": "2022-02-10T19:41:51.971+00:00",
-      "fotoHashCode": null
-    },
-    {
-      "id": "3",
-      "nombre": "Paco",
-      "apellido": "Pedro",
-      "email": "juanp@correo.es",
-      "edad": 14,
-      "creadoEn": "2022-02-10T19:41:59.670+00:00",
-      "fotoHashCode": null
-    },
-    {
       "id": "4",
       "nombre": "Pepa",
       "apellido": "Pedro",
@@ -53,40 +35,6 @@
       "edad": 14,
       "creadoEn": "2022-02-10T19:42:04.466+00:00",
       "fotoHashCode": null
-    },
-    {
-      "id": "5",
-      "nombre": "Luis",
-      "apellido": "Rodri",
-      "email": "juanp@correo.es",
-      "edad": 14,
-      "creadoEn": "2022-02-10T19:42:15.636+00:00",
-      "fotoHashCode": null
-    },
-    {
-      "id": "1",
-      "nombre": "Juan",
-      "apellido": "Pedro",
-      "email": "juanp@correo.es",
-      "edad": 14,
-      "creadoEn": "2022-02-10T19:41:07.020+00:00",
-      "fotoHashCode": null
-    },
-    {
-      "id": 6,
-      "nombre": "jose",
-      "apellido": "antonio",
-      "email": "ja@asf",
-      "creadoEn": "",
-      "edad": 30
-    },
-    {
-      "id": 7,
-      "nombre": "PEPA",
-      "apellido": "perez",
-      "email": "pepa@hot.es",
-      "creadoEn": "",
-      "edad": 30
     }
   ]
 }

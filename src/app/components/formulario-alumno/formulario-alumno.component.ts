@@ -20,6 +20,11 @@ export class FormularioAlumnoComponent {
 
   router:Router = inject(Router);//este objeto me permite enrutar programaticamente
 
+//TODO: 1 LEER LOS PARÁMETROS DE LA URL
+//2 DIFERENCIAR SI ESTOY EDITANDO O CREANDO
+//3 SI QUIERO EDITAR, ¿CÓMO RELLENO EL FORMULARIO CON LOS
+//DATOS DEL ALUMNO EN EDICIÓN?
+
   constructor(private alumnoService:AlumnoService) {
     this.alumno = new Alumno();
   }
