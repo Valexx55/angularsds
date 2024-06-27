@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Alumno } from '../models/alumno';
+import { RUTA_SERVIDOR_ALUMNOS } from '../config/app';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +14,16 @@ import { Alumno } from '../models/alumno';
 //POST - CREAR 
 //PUT - MODIFICAR
 //DELETE - BORRAR
+
+
 export class AlumnoService {
 
-  constructor(private httpClient: HttpClient) { }
+  ruta_servidor:string = RUTA_SERVIDOR_ALUMNOS;
+  cabecera!: HttpHeaders;
+
+  constructor(private httpClient: HttpClient) {
+    this.cabecera = new HttpHeaders({'Content-type': 'application/json'});
+   }
 
 
   leerTodosLosAlumnosDelServidor ()
@@ -27,9 +36,9 @@ export class AlumnoService {
     
   }
 
-  crearAlumnoEnElServidor (alumnoNuevo:Alumno)
+  crearAlumnoEnElServidor (alumnoNuevo:Alumno): Observable<Alumno>
   {
-
+    return this.httpClient.post<Alumno>(this.ruta_servidor, alumnoNuevo, {headers: this.cabecera});
   }
 
   modificarAlumnoEnElServidor (alumnoModificado:Alumno)

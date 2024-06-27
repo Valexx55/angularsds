@@ -22,7 +22,7 @@
     </div>
     <div class="form-group">
         <label for="nombre">EDAD</label>
-        <input #edad="ngModel" id="nombre"  [(ngModel)]="alumno.edad" type="number" class="form-control" name="edad" placeholder="Intro edad del alumno" required min="0" max="130">
+        <input #edad="ngModel" id="edad"  [(ngModel)]="alumno.edad" type="number" class="form-control" name="edad" placeholder="Intro edad del alumno" required min="0" max="130">
         <div class="alert alert-danger" [hidden]="edad.valid||!formulario_alumno.submitted">
             La edad debe estar entre 0 y 130
         </div>

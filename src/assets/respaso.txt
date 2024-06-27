@@ -27,3 +27,19 @@ ANGULAR Material: Librería de compenentes de la "Casa Angular"
 
 standalone: Cada componente debe declarar explícitamente sus depedencias
 Property bindign: [ ] asigno un valor a una propeidad del Compoente desde la plantilla
+
+Formularios Plantilla (Template)
+        validación declarativa
+        controles / formulario tienen atributos de control      
+        pristine/dirty submitted valid
+Reactivos
+
+ViewChild Tenemos acceso al hijo desde su padre #selector
+ViewChildren (obtengo  a varios)
+ElementRef: Envoltorio / clase ref a elementos nativos (div, img)
+
+ngAfterViewInit - ciclo vida se completa cuando la plantilla se ha carga
+
+@Input > paso atributos de padre a hijo (Property binding)
+@Output > emitir un evento del hijo al padre (Event binding)
+
