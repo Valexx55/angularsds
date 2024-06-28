@@ -1,6 +1,6 @@
 //import { CommonModule } from '@angular/common';
 //import { NgIf } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -14,8 +14,13 @@ export class DniComponent implements OnInit, OnDestroy {
 
   titulo: string;
   numero!: number | null;//UNION TYPE
-  letra!: string;
+  letra = signal("");
   prefijo!: string;
+  mensaje = computed (
+    () => {
+      return "Su letra es "+ this.letra();
+    }
+  )
 
 
   //atributo a nivel de Clase
@@ -31,7 +36,7 @@ export class DniComponent implements OnInit, OnDestroy {
 
     this.titulo = 'CALCULE LA LETRA DE SU DNI'
     console.log("constructor dni");
-    this.letra = "";
+    //this.letra = "";
     //this.numero=8;
   }
 
@@ -69,7 +74,8 @@ export class DniComponent implements OnInit, OnDestroy {
 
     //let resto = ((numeroDni)? numeroDni:0 % (DniComponent.SECUENCIA_LETRAS.length))?.valueOf();
     let resto = numeroDni % (DniComponent.SECUENCIA_LETRAS.length);
-    this.letra = DniComponent.SECUENCIA_LETRAS.charAt(resto);
+    //this.letra = DniComponent.SECUENCIA_LETRAS.charAt(resto);
+    this.letra.set (DniComponent.SECUENCIA_LETRAS.charAt(resto));
     console.log("SU LETRA ES " + this.letra);
 
 

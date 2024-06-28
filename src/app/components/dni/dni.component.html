@@ -39,9 +39,10 @@
     Su letra de dni es {{letra}}
 </div>-->
 
-@if (letra!='')
+<!--leo el valor del signal-->
+@if (letra()!='')
 {
     <div>
-        Su letra de dni es {{letra}}
+        {{mensaje()}}
     </div>
 }
