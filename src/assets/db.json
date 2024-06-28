@@ -29,10 +29,10 @@
   "alumnos": [
     {
       "id": "4",
-      "nombre": "Pepa",
-      "apellido": "Pedro",
-      "email": "juanp@correo.es",
-      "edad": 14,
+      "nombre": "Jose",
+      "apellido": "Antonio",
+      "email": "josea@correo.es",
+      "edad": 41,
       "creadoEn": "2022-02-10T19:42:04.466+00:00",
       "fotoHashCode": null
     }

@@ -21,6 +21,8 @@ export class AlumnoService {
   ruta_servidor:string = RUTA_SERVIDOR_ALUMNOS;
   cabecera!: HttpHeaders;
 
+  //alumnoEnEdicion!:Alumno;
+
   constructor(private httpClient: HttpClient) {
     this.cabecera = new HttpHeaders({'Content-type': 'application/json'});
    }
@@ -32,9 +34,9 @@ export class AlumnoService {
   }
 
   
-  leerUnAlumnosDelServidor (numeroAlumno:number)
+  leerUnAlumnosDelServidor (numeroAlumno:number):Observable<Alumno>
   {
-    
+    return this.httpClient.get<Alumno>(this.ruta_servidor+"/"+numeroAlumno);
   }
 
   crearAlumnoEnElServidor (alumnoNuevo:Alumno): Observable<Alumno>
@@ -42,9 +44,9 @@ export class AlumnoService {
     return this.httpClient.post<Alumno>(this.ruta_servidor, alumnoNuevo, {headers: this.cabecera});
   }
 
-  modificarAlumnoEnElServidor (alumnoModificado:Alumno)
+  modificarAlumnoEnElServidor (alumnoModificado:Alumno): Observable<Alumno>
   {
-
+    return this.httpClient.put<Alumno>(this.ruta_servidor+"/"+alumnoModificado.id, alumnoModificado, {headers: this.cabecera});
   }
 
   borrarAlumnoDelServidor (idAlumno:number):Observable<Alumno>

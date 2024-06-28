@@ -1,4 +1,4 @@
-<form #formulario_alumno="ngForm" (ngSubmit)="crearAlumno()">
+<form #formulario_alumno="ngForm" (ngSubmit)="en_edicion ? actualizarAlumno() : crearAlumno()">
     <div class="form-group">
         <label for="nombre">NOMBRE</label>
         <input #nombre="ngModel" id="nombre"  [(ngModel)]="alumno.nombre" type="text" class="form-control" name="nombre" placeholder="Intro el nombre del alumno" required pattern=".{3,10}">
@@ -29,5 +29,5 @@
     </div>
     <br>
     <!--<button type="submit" [class]="estiloBoton()">CREAR</button>-->
-    <button type="submit" [class]="estiloBoton()" [disabled]="!formulario_alumno.valid">CREAR</button>
+    <button type="submit" [class]="estiloBoton()" [disabled]="!formulario_alumno.valid">{{(en_edicion)? "ACTUALIZAR" : "CREAR"}}</button>
 </form>
